@@ -1,0 +1,25 @@
+*.pyc
+
+.xml
+
+*.log
+
+1549537666393	geckodriver	INFO	geckodriver 0.19.0
+
+node_modules
+# pycharm
+.idea
+
+# VSCode
+.vscode
+.vscode/
+node_modules/
+cypress.env.json
+cypress/videos
+cypress/results
+cypress/screenshots
+cypress/.DS_Store
+.Ds_store
+.DS_Store
+.DS_Store/
+package-lock.json

@@ -1,0 +1,42 @@
+{
+  "name": "sample-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "pretest": "rimraf -r ./cypress/report/",
+    "test": "npx cypress run",
+    "posttest": "npm run merge-reports && npm run generate-htmlreport",
+    "merge-reports": "npx mochawesome-merge ./cypress/report/*.json > ./myreport.json",
+    "generate-htmlreport": "npx marge myreport.json --reportDir ./cypress/report/",
+    "lint": "prettier --check .",
+    "format": "prettier --write ."
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "prettier --write . && git add -A ."
+    }
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cypress": "^10.6.0",
+    "rimraf": "^3.0.2",
+    "tesseract.js": "^2.1.1"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.34.0",
+    "@typescript-eslint/parser": "^5.34.0",
+    "cypress-multi-reporters": "^1.6.1",
+    "eslint": "^8.22.0",
+    "eslint-config-google": "^0.14.0",
+    "husky": "^8.0.1",
+    "mocha": "^10.0.0",
+    "mochawesome": "^7.1.3",
+    "mochawesome-merge": "^4.2.1",
+    "mochawesome-report-generator": "^6.2.0",
+    "prettier": "^2.7.1",
+    "typescript": "^4.7.4"
+  }
+}
